@@ -1,0 +1,25 @@
+{
+    "name": "xooxx/api-transformer",
+    "description": "Base library providing the core functionality for API transformation.",
+    "type": "library",
+    "require": {
+        "xooxx/serializer": "^1.0",
+        "psr/http-message": "^1.0",
+        "zendframework/zend-diactoros": "^1.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xooxx",
+            "email": "xooxx.dev@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Xooxx\\Api\\Http\\": "src/Http/",
+            "Xooxx\\Api\\Mapping\\": "src/Mapping/",
+            "Xooxx\\Api\\Mappings\\": "src/Mappings/",
+            "Xooxx\\Api\\Transformer\\": "src/Transformer/"
+        }
+    }
+}
