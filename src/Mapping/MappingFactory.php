@@ -165,15 +165,19 @@ class MappingFactory
                 $properties[$f] = $prop;
             }
             if ($parentClass = $ref->getParentClass()) {
-                $parentPropsArr = static::getClassProperties($parentClass->getName());
-                if (\count($parentPropsArr) > 0) {
-                    $properties = \array_merge($parentPropsArr, $properties);
+
+                if(!$parentClass->isAbstract()) {
+                    $parentPropsArr = static::getClassProperties($parentClass->getName());
+                    if (\count($parentPropsArr) > 0) {
+                        $properties = \array_merge($parentPropsArr, $properties);
+                    }
                 }
             }
             static::$classProperties[$className] = \array_keys($properties);
         }
         return static::$classProperties[$className];
     }
+
 
     /**
      * @param array $mappedClass
